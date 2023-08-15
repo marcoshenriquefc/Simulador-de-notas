@@ -1,0 +1,16 @@
+.button-base {
+    padding: 8px 24px;
+    background-color: #F9B105;
+
+    border: none;
+
+    border-radius: 8px;
+    color: #333;
+
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-base.full-width {
+    width: 100%;
+}

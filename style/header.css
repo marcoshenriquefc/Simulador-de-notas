@@ -1,0 +1,15 @@
+.text-area {
+    margin-top: 80px;
+}
+
+.header-base {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    border-bottom: 1px solid #969696;
+}

@@ -1,0 +1,25 @@
+.main-area {
+    width: 100%;
+}
+
+.main-area .info-area {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.main-area .info-area p {
+    max-width: 430px;
+}
+.main-area .info-area img {
+    height: 320px;
+}
+
+.main-area .footer-info {
+    padding: 24px 0;
+}
+
+.main-area .footer-info p {
+    margin-bottom: 16px;
+}
