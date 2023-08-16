@@ -81,8 +81,7 @@ body {
 .note-area {
     display: flex;
     gap: 12px;
-
-    align-items: end;
+    align-items: start;
 
     padding: 20px 0;
 }
@@ -107,6 +106,32 @@ body {
     border: 1px solid #bababa;
 }
 
+.exit {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 8px;
+    text-decoration: none;
+    padding: 4px 12px;
+    
+    transition: all .3s;
+}
+
+.exit:hover {
+    background-color: #46166b;
+
+    border-radius: 4px;
+}
+
+.note-table .note-area:not(.first) .input-box label {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .note-table .note-area:not(.first) .input-box label {
+        display: block;
+    }
+}
 @media screen and (max-width: 750px) {
     
     .body-main {
@@ -127,5 +152,4 @@ body {
         display: flex;
         flex-direction: column;
     }
-
 }

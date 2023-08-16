@@ -34,7 +34,15 @@
 @media screen and (max-width: 750px) {
     .glossario-responsive {
         display: block;
-        margin-top: 20px;
+        margin-top: 24px;
+
+        border-radius: 4px;
+        padding: 4px 16px;
+        transition: all .3s;
+    }
+
+    .glossario-responsive:hover {
+        background-color: #45156a;
     }
 
     .background-popup.active {
