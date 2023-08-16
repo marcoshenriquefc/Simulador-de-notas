@@ -18,3 +18,49 @@
     font-weight: 400px;
     font-size: 14px;
 }
+
+.background-popup {
+    width: 100%;
+}
+
+
+.glossario-responsive {
+    background: none;
+    border: none;
+    display: none;
+}
+
+
+@media screen and (max-width: 750px) {
+    .glossario-responsive {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .background-popup.active {
+        display: flex;
+    }
+    .background-popup {
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.44);
+        padding: 20px;
+    }
+
+    .glossario-area {
+        width: fit-content;
+        padding: 32px;
+        border-left-width: 4px;
+        border-radius: 8px;
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+        background-color:  #612E89;
+    }
+}

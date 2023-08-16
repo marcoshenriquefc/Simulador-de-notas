@@ -23,3 +23,18 @@
 .main-area .footer-info p {
     margin-bottom: 16px;
 }
+
+
+@media screen and (max-width: 750px){
+    .main-area .info-area {
+        padding-bottom: 20px;
+    }
+    .main-area .info-area img{
+        display: none;
+    }
+
+    .main-area .info-area p {
+        width: 100%;
+        max-width: none;
+    }
+}

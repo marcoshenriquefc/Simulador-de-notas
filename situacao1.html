@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,14 @@
     <link rel="stylesheet" href="./style/glossario-area.css">
     <link rel="stylesheet" href="./style/input.css">
 </head>
+
 <body>
     <hr class="list-base">
     <header class="header-base">
         <img src="./assets/image/sesi.png" alt="Logo sesi">
 
-        <h1>Escola Sesi</h1>
-    
+        <h1 class="title-header">Escola Sesi</h1>
+
         <div>
             <span>Bem vindo(a) Fulano de tal</span>
             <a href="#">Sair</a>
@@ -68,19 +70,25 @@
                 </button>
             </div>
 
-            <section class="glossario-area">
-                <h1 class="title-base">Glossário</h1>
+            <div class="glossario-responsive">
+                <button class="glossario-button" onclick="openPopup()">Glossário <span class="icon">?</span></button>
+            </div>
 
-                <ul class="glossario-list">
-                    <li class="glossario-item"> AV1 - Nota da Avaliação 1</li>
-                    <li class="glossario-item"> AV2 - Nota da Avaliação 2</li>
-                    <li class="glossario-item"> AV3 - Nota da Avaliação 3</li>
-                    <li class="glossario-item"> AVT - Avaliação Trimestral</li>
-                    <li class="glossario-item"> MP - Média Parcial</li>
-                    <li class="glossario-item"> RAV - Nota da Reavaliação</li>
-                    <li class="glossario-item"> MT - Média Trimestral</li>
-                    <li class="glossario-item"> MT - Média Trimestral</li>
-                </ul>
+            <section class="background-popup" onclick="closePopup(event)">
+                <div class="glossario-area">
+                    <h1 class="title-base">Glossário</h1>
+
+                    <ul class="glossario-list">
+                        <li class="glossario-item"> AV1 - Nota da Avaliação 1</li>
+                        <li class="glossario-item"> AV2 - Nota da Avaliação 2</li>
+                        <li class="glossario-item"> AV3 - Nota da Avaliação 3</li>
+                        <li class="glossario-item"> AVT - Avaliação Trimestral</li>
+                        <li class="glossario-item"> MP - Média Parcial</li>
+                        <li class="glossario-item"> RAV - Nota da Reavaliação</li>
+                        <li class="glossario-item"> MT - Média Trimestral</li>
+                        <li class="glossario-item"> MT - Média Trimestral</li>
+                    </ul>
+                </div>
 
             </section>
         </aside>
@@ -89,16 +97,16 @@
             <section class="title-area">
                 <h2 class="title-base">Situação 1</h2>
                 <p class="text-base">
-                    Onde será possível simular as médias parcial e trimestral para as 
-                    áreas do conhecimento e unidades curriculares da formação geral 
-                    básica do Ensino Fundamental II e Ensino Médio. À medida que os 
+                    Onde será possível simular as médias parcial e trimestral para as
+                    áreas do conhecimento e unidades curriculares da formação geral
+                    básica do Ensino Fundamental II e Ensino Médio. À medida que os
                     campos das notas são preenchidos, o simulador constrói as linhas das médias.
                 </p>
             </section>
             <hr class="divider">
 
             <form class="note-form note-area">
-                <div class="input-box">
+                <div class="input-box select">
                     <label for="materia">Matéria</label>
                     <select class="input-note" requried>
                         <option value="" selected disabled> Selecione a matéria</option>
@@ -106,50 +114,60 @@
                         <option value="Fisica"> Física </option>
                     </select>
                 </div>
+                <section class="note-inputs">
+                    <div class="input-box">
+                        <label for="av1">AV1</label>
+                        <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av1" id="av1"
+                            required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label for="av2">AV2</label>
+                        <input class="input-note number" type="number" min="0" max="10" step=".1" name="av2" id="av2"
+                            required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label for="av3">AV3</label>
+                        <input class="input-note number" type="number" min="0" max="10" step=".1" name="av3" id="av3"
+                            required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label for="avt">AVT</label>
+                        <input class="input-note number" type="number" min="0" max="10" step=".1" name="avt" id="avt"
+                            required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label for="mp">MP</label>
+                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp"
+                            readonly required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label for="rav">RAV</label>
+                        <input class="input-note number" type="number" min="0" max="10" step=".1" name="rav" id="rav"
+                            required>
+                    </div>
+    
+                    <div class="input-box">
+                        <label for="mt">MT</label>
+                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt"
+                            readonly required>
+                    </div>
+    
+                    <button class="button-note">+</button>
+                </section>
 
-                <div class="input-box">
-                    <label for="av1">AV1</label>
-                    <input class="input-note number" type="number" min="0" max="10" step=".1" name="av1" id="av1" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="av2">AV2</label>
-                    <input class="input-note number" type="number" min="0" max="10" step=".1" name="av2" id="av2" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="av3">AV3</label>
-                    <input class="input-note number" type="number" min="0" max="10" step=".1" name="av3" id="av3" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="avt">AVT</label>
-                    <input class="input-note number" type="number" min="0" max="10" step=".1" name="avt" id="avt" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="mp">MP</label>
-                    <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp" readonly required>
-                </div>
-
-                <div class="input-box">
-                    <label for="rav">RAV</label>
-                    <input class="input-note number" type="number" min="0" max="10" step=".1" name="rav" id="rav" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="mt">MT</label>
-                    <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt" readonly required>
-                </div>
-
-                <button class="button-note">+</button>
             </form>
 
             <hr class="divider">
 
             <section class="note-table">
+
                 <div class="note-area">
-                    <div class="input-box">
+                    <div class="input-box select">
                         <label for="materia">Matéria</label>
                         <select class="input-note" requried disabled>
                             <option value="" selected disabled> Selecione a matéria</option>
@@ -157,164 +175,164 @@
                             <option value="Fisica"> Física </option>
                         </select>
                     </div>
-    
-                    <div class="input-box">
-                        <label for="av1">AV1</label>
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av1" id="av1" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="av2">AV2</label>
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av2" id="av2" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="av3">AV3</label>
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av3" id="av3" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="avt">AVT</label>
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="avt" id="avt" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="mp">MP</label>
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp" readonly required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="rav">RAV</label>
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="rav" id="rav" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="mt">MT</label>
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt" readonly required>
-                    </div>
-    
-                    <button class="button-note">-</button>
+                    <section class="note-inputs">
+                        <div class="input-box">
+                            <label for="av1">AV1</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av1" id="av1"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="av2">AV2</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av2" id="av2"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="av3">AV3</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av3" id="av3"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="avt">AVT</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="avt" id="avt"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="mp">MP</label>
+                            <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp"
+                                readonly required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="rav">RAV</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="rav" id="rav"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="mt">MT</label>
+                            <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt"
+                                readonly required>
+                        </div>
+        
+                        <button class="button-note">-</button>
+                    </section>
                 </div>
 
                 <div class="note-area">
-                    <div class="input-box">
+                    <div class="input-box select">
+                        <label for="materia">Matéria</label>
                         <select class="input-note" requried disabled>
                             <option value="" selected disabled> Selecione a matéria</option>
                             <option value="Matematica"> Matemática </option>
                             <option value="Fisica"> Física </option>
                         </select>
                     </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av1" id="av1" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av2" id="av2" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av3" id="av3" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="avt" id="avt" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp" readonly required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="rav" id="rav" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt" readonly required>
-                    </div>
-    
-                    <button class="button-note">-</button>
-                </div>
-
-                <div class="note-area">
-                    <div class="input-box">
-                        <select class="input-note" requried disabled>
-                            <option value="" selected disabled> Selecione a matéria</option>
-                            <option value="Matematica"> Matemática </option>
-                            <option value="Fisica"> Física </option>
-                        </select>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av1" id="av1" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av2" id="av2" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av3" id="av3" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="avt" id="avt" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp" readonly required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="rav" id="rav" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt" readonly required>
-                    </div>
-    
-                    <button class="button-note">-</button>
+                    <section class="note-inputs">
+                        <div class="input-box">
+                            <label for="av1">AV1</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av1" id="av1"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="av2">AV2</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av2" id="av2"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="av3">AV3</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av3" id="av3"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="avt">AVT</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="avt" id="avt"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="mp">MP</label>
+                            <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp"
+                                readonly required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="rav">RAV</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="rav" id="rav"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="mt">MT</label>
+                            <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt"
+                                readonly required>
+                        </div>
+        
+                        <button class="button-note">-</button>
+                    </section>
                 </div>
 
                 
                 <div class="note-area">
-                    <div class="input-box">
+                    <div class="input-box select">
+                        <label for="materia">Matéria</label>
                         <select class="input-note" requried disabled>
                             <option value="" selected disabled> Selecione a matéria</option>
                             <option value="Matematica"> Matemática </option>
                             <option value="Fisica"> Física </option>
                         </select>
                     </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av1" id="av1" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av2" id="av2" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="av3" id="av3" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="avt" id="avt" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp" readonly required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number" type="number" min="0" max="10" step=".1" readonly name="rav" id="rav" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt" readonly required>
-                    </div>
-    
-                    <button class="button-note">-</button>
+                    <section class="note-inputs">
+                        <div class="input-box">
+                            <label for="av1">AV1</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av1" id="av1"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="av2">AV2</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av2" id="av2"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="av3">AV3</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="av3" id="av3"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="avt">AVT</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="avt" id="avt"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="mp">MP</label>
+                            <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mp" id="mp"
+                                readonly required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="rav">RAV</label>
+                            <input class="input-note number" type="number" min="0" max="10" readonly step=".1" name="rav" id="rav"
+                                required>
+                        </div>
+        
+                        <div class="input-box">
+                            <label for="mt">MT</label>
+                            <input class="input-note number active" type="number" min="0" max="10" step=".1" name="mt" id="mt"
+                                readonly required>
+                        </div>
+        
+                        <button class="button-note">-</button>
+                    </section>
                 </div>
             </section>
 
@@ -327,4 +345,20 @@
         </main>
     </section>
 </body>
+
+<script>
+    function openPopup() {
+        const $popupArea = document.querySelector('.background-popup');
+
+        $popupArea.classList.add('active')
+    }
+    function closePopup(event) {
+        const popupArea = document.querySelector('.background-popup');
+
+        if (popupArea === event.target) {
+            popupArea.classList.remove('active');
+        }
+    }
+</script>
+
 </html>
