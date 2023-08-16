@@ -65,8 +65,32 @@ body {
 }
 
 .title-area {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     padding: 24px 0;
+}
+
+.text-base {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.note-area {
+    display: flex;
+    gap: 12px;
+
+    align-items: end;
+
+    padding: 20px 0;
+}
+
+.note-table {
+    padding: 24px 0;
+}
+
+.note-table .note-area {
+    padding: 8px 0;
+}
+
+.divider {
+    border: 1px solid #bababa;
 }

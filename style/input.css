@@ -26,3 +26,47 @@
     font-size: 12px;
     font-style: italic;
 }
+
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-note {
+    width: 100%;
+    max-width: 200px;
+
+    background-color: #fff;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 12px;
+    
+    color: #612E89;
+
+    cursor: pointer;
+}
+
+.input-note.number {
+    max-width: 60px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.20);
+}
+
+.input-note.active {
+    background-color: #F9B105;
+    box-shadow: 0px 4px 4px 0px hsl(42, 96%, 50%, .2);
+}
+
+.note-table .input-note {
+    background-color: #dadada;
+    color: #6f6f6f;
+}
+
+.note-table .input-note.active {
+    background-color: rgb(252, 199, 77)
+}
