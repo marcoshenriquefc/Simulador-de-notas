@@ -1,0 +1,20 @@
+.glossario-area {
+    width: 100%;
+    border-left: 1px solid #F9B105;
+    margin-top: 32px;
+    padding-left: 20px ;
+}
+
+.glossario-area .glossario-list {
+    list-style: none;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 12px;
+}
+
+.glossario-area .glossario-item {
+    font-weight: 400px;
+    font-size: 14px;
+}

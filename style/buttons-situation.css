@@ -11,8 +11,17 @@
     border-radius: 8px;
     border: none;
 
+    text-decoration: none;
+
     padding: 8px 16px;
     cursor: pointer;
+}
+.button-situation.active {
+    background-color: #F9B105;
+}
+
+.button-situation.active:hover{
+    background-color: #deb045;
 }
 
 .button-situation:hover {
@@ -42,10 +51,13 @@
     color: #333;
 }
 
+
 .button-situation .info-area .text {
     color: #333;
 }
-
+.button-situation .info-area .title {
+    font-size: 16px;
+}
 .button-situation .info-area .subtitle {
     font-size: 12px;
 }
