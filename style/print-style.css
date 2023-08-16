@@ -1,0 +1,36 @@
+body.print {
+    background-color: #f9f9f9;
+}
+
+body.print *{
+    color: #1a1a1a;
+}
+
+body.print .buttons-area {
+    display: none;
+}
+
+body.print .note-form {
+    display: none;
+}
+
+body.print .note-table .input-note {
+    background:none ;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    box-shadow: none;
+}
+body.print .note-table .input-note.active {
+    background-color: #E5E6E7;
+    box-shadow: none;
+}
+body.print .note-table .button-note {
+    display: none;
+}
+body.print .button-base {
+    display: none;
+}
+
+body.print .exit:hover {
+    background: none;
+}
