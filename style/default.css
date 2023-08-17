@@ -122,13 +122,13 @@ body {
     border-radius: 4px;
 }
 
-.note-table .note-area:not(.first) .input-box label {
+.note-table .note-area:not(:first-child) .input-box label {
     display: none;
 }
 
 @media screen and (max-width: 1000px) {
 
-    .note-table .note-area:not(.first) .input-box label {
+    .note-table .note-area:not(:first-child) .input-box label {
         display: block;
     }
 }
