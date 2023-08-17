@@ -16,10 +16,22 @@ class noteController {
         const noteData = Array.from(allInputs).map(input => {
             const tagName = input.tagName.toLocaleLowerCase();
 
+            let textInput = '';
+
+
+            if(tagName === 'select') {
+                const option = Array.from(input.children).find(currentOption => {
+                    return currentOption.value === input.value;
+                })
+
+                textInput = option.innerText;
+            }
+
             const inputData = {
                 name : tagName !== 'select' ? input.name : 'materia',
                 value : input.value,
                 tagName : tagName,
+                text : tagName === 'select' ? textInput : input.value,
                 autoComplete: input.attributes.readonly,
             }
             return inputData;
@@ -43,9 +55,6 @@ class noteController {
 
     // Função para remover o node box das notas/materia solicitada para remover
     static removeNote(noteButton) {
-        console.log(noteButton)
-        console.log(noteButton.parentNode)
-        console.log(noteButton.parentNode.parentNode)
         const boxNote = noteButton.parentNode.parentNode;
         boxNote.remove();
     }
@@ -77,7 +86,9 @@ class noteController {
     // Metodo para gerar inputBox
     static createBoxInputs(inputsList) {
 
+        
         const listInputs = inputsList.map( input => {
+            console.log(input.value)
             if(input.tagName === 'input') {
                 const inputBox = `
                     <div class="input-box">
@@ -101,20 +112,19 @@ class noteController {
             }
             return ''
         })
-        return listInputs.join('');
 
+        return listInputs.join('');
     }
 
     // Metodo para gerar selectBox
     static createSelectHTML(inputList) {
-
         const selectbox = inputList.map( input => {
             if(input.tagName === 'select') {
                 const selectBoxHTML = `
                     <div class="input-box select">
                         <label for="${input.name}">Matéria</label>
                         <select class="input-note" requried disabled>
-                            <option value="${input.value}" selected disabled> ${input.value}</option>
+                            <option value="${input.value}" selected disabled> ${input.text}</option>
                         </select>
                     </div>
                 `;
@@ -287,7 +297,7 @@ class noteController {
             const link = window.location.origin;
             window.location.href = `${link}/`
         }
-        
+
         const serie = userData.find( userSerie => {
             return userSerie.name === 'serie'
         })
