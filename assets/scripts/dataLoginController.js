@@ -1,11 +1,12 @@
 const $loginForm = document.querySelector('#form-login');
 
-$loginForm.addEventListener('submit', (event) => {
-    console.log(event)
-    event.preventDefault();
-
-    dataLoginController.getDataSelected();
-})
+if($loginForm) {
+    $loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+    
+        dataLoginController.getDataSelected();
+    })
+}
 
 class dataLoginController {
     
@@ -31,7 +32,6 @@ class dataLoginController {
 }
 
 class CookieDataUser {
-
     static cookieName = 'dataUser';
 
     static setCookie(name, value, options = []) {

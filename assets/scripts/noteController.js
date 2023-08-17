@@ -41,6 +41,7 @@ class noteController {
         this.clearInputs()
     }
 
+    // Função para remover o node box das notas/materia solicitada para remover
     static removeNote(noteButton) {
         console.log(noteButton)
         console.log(noteButton.parentNode)
@@ -58,8 +59,22 @@ class noteController {
         }
     }
 
+    // Adiciona osoptions gerado de cada série no HTML
+    static addOptionsHTML(optionsListHTML) {
+        
+        if(optionsListHTML.length >= 1) {
+            const $selectInput = $noteForm.querySelector('select.input-note');
 
-    // Method to generate HTML box inputs
+            $selectInput.innerHTML += optionsListHTML;
+        }
+        else {
+            const link = window.location.origin;
+            window.location.href = `${link}/`
+        }
+    }
+
+
+    // Metodo para gerar inputBox
     static createBoxInputs(inputsList) {
 
         const listInputs = inputsList.map( input => {
@@ -90,7 +105,7 @@ class noteController {
 
     }
 
-    // Method to generate Select box
+    // Metodo para gerar selectBox
     static createSelectHTML(inputList) {
 
         const selectbox = inputList.map( input => {
@@ -111,4 +126,195 @@ class noteController {
 
         return selectbox.join('');
     }
+
+    // Metodo para gerar options do select de matérias
+    static getCurrentSerie() {
+        const disciplineSerieList =  {
+            '6ano-fundamental' : [
+                'Arte',
+                'Ciências',
+                'Educação Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Projetos de Vida',
+            ],
+            '7ano-fundamental' : [
+                'Arte',
+                'Ciências',
+                'Educação Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Projetos de Vida',
+            ],
+            '8ano-fundamental' : [
+                'Arte',
+                'Ciências',
+                'Educação Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Projetos de Vida',
+            ],
+            '9ano-fundamental' : [
+                'Arte',
+                'Ciências',
+                'Educação Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Projetos de Vida',
+                'Raciocínio Lógico-Matemático',
+                'Redação',
+            ],
+            '1ano-medio' : [
+                'Arte',
+                'Biologia',
+                'Educação Física',
+                'Filosofia',
+                'Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Mundo do Trabalho',
+                'Química',
+                'Sociologia',
+            ],
+            '2ano-natureza-medio' : [
+                'Biologia',
+                'Desvendando o Planeta Terra I',
+                'Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Química',
+                'Seres Microscópicos I',
+                'Seres Microscópicos II',
+            ],
+            '2ano-matematica-medio' : [
+                'Biologia',
+                'Ciência e Tecnologia',
+                'Física',
+                'Geografia',
+                'História',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Matemática',
+                'Matemática e Engenharias I',
+                'Química',
+            ],
+            '2ano-habtecnica-medio' : [
+                'Arq. de Hardware e Software',
+                'Biologia',
+                'Codificação para Front-End',
+                'Física',
+                'Fund. de Bancos de Dados',
+                'Fundamentos de UI/UX',
+                'Geografia',
+                'História',
+                'Int. a Qualidade e Produtividade',
+                'Introdução a TI e Comunicação',
+                'L. E. M. Inglês',
+                'Língua Portuguesa',
+                'Lógica Computacional',
+                'Lógica de Programação',
+                'Matemática',
+                'Metodologias de Desenv. de Projetos',
+                'Projeto Integrador 1',
+                'Química',
+                'Saúde e Segurança no Trabalho',
+                'Versionamento e Colaboração',
+            ],
+            '3ano-natureza-medio' : [
+                'Desvendando o Planeta Terra II',
+                'Física',
+                'Geografia',
+                'História',
+                'Língua Portuguesa',
+                'Matemática',
+                'Química',
+                'Seres Microscópicos III',
+                'Seres Microscópicos IV',
+            ],
+            '3ano-matematica-medio' : [
+                'Investigação e inovação científica',
+                'Finanças e Matemática',
+                'Física',
+                'Geografia',
+                'História',
+                'Língua Portuguesa',
+                'Matemática',
+                'Matemática e Engenharias II',
+                'Pensamento Estatístico',
+                'Química',
+            ],
+            '3ano-habtecnica-medio' : [
+                "Banco de Dados",
+                "Codificação para Back-End",
+                "Desenvolvimento de APIs",
+                "Física",
+                "Geografia",
+                "História",
+                "Interação com APIs",
+                "Língua Portuguesa",
+                "Matemática",
+                "Projeto de Back-End",
+                "Projeto de Front-End",
+                "Química",
+                "Testes de Back-End",
+                "Testes de Front-End",
+            ],
+
+
+        };
+
+        const userData = JSON.parse(CookieDataUser.getCookie(CookieDataUser.cookieName))
+        
+        if(!userData) {
+            const link = window.location.origin;
+            window.location.href = `${link}/`
+        }
+        
+        const serie = userData.find( userSerie => {
+            return userSerie.name === 'serie'
+        })
+
+        const currentSerie =  disciplineSerieList[serie.value];
+        const optionsHTML = this.createOptionsInputs(currentSerie);
+
+        this.addOptionsHTML(optionsHTML);
+    }
+
+    static createOptionsInputs(listOptions) {
+        
+        const optionListHTML = listOptions.map( option => {
+            const tratedName = option.normalize('NFD')
+                            .replace(/[\u0300-\u036f]/g, "")
+                            .toLowerCase()
+                            .replace(/[- ]+/g, "-");
+
+            const optionHTML = `
+                <option value="${tratedName}">${option}</option>
+            `;
+
+            return optionHTML;
+        })
+
+        return optionListHTML.join('');
+    }
 }
+
+noteController.getCurrentSerie()
