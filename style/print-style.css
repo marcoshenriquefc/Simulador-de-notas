@@ -1,5 +1,5 @@
 body.print {
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 body.print *{
@@ -16,21 +16,29 @@ body.print .note-form {
 
 body.print .note-table .input-note {
     background:none ;
-    border: 1px solid #1a1a1a;
+    border: 1.5px solid #1a1a1a;
     color: #1a1a1a;
     box-shadow: none;
 }
 body.print .note-table .input-note.active {
-    background-color: #E5E6E7;
+    background-color: #b1b1b1;
     box-shadow: none;
 }
 body.print .note-table .button-note {
     display: none;
 }
 body.print .button-base {
-    display: none;
+    /* display: none; */
 }
 
 body.print .exit:hover {
     background: none;
+}
+
+body.print .aside-buttons {
+    max-width: 200px;
+}
+
+body.print .logo-area path{
+    fill: #1a1a1a;
 }

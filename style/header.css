@@ -13,7 +13,9 @@
 
     border-bottom: 1px solid #969696;
 }
-
+.logo-area path{
+    fill: white;
+}
 
 @media screen and (max-width: 750px) {
     .header-base {
