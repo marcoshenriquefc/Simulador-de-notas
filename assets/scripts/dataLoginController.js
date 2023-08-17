@@ -25,11 +25,8 @@ class dataLoginController {
             CookieDataUser.setCookie(CookieDataUser.cookieName, dataLoginJSON);
 
             const link = window.location.origin;
-
             window.location.href = `${link}/home.html`
         }
-
-
     }
 }
 
@@ -72,4 +69,4 @@ class CookieDataUser {
     }
 }
 
-window.Cookie_IDigital = Cookie_IDigital;
+window.CookieDataUser = CookieDataUser;
