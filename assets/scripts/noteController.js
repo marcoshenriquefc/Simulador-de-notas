@@ -1,5 +1,3 @@
-
-
 const $noteForm = document.querySelector('.note-form');
 
 $noteForm.addEventListener('submit', (event) => {

@@ -26,28 +26,37 @@
             </p>
         </header>
 
-        <form class="form-area">
+        <form id="form-login" class="form-area">
             <div class="box-input">
-                <label for="input">Selecione sua Escola</label>
-                <select id="input" class="input-base" required>
-                    <option value="" selected disabled>Selecionar</option>
-                    <option value="teste2">Teste 2</option>
-                    <option value="teste3">Teste 3</option>
+                <label for="unidade">Unidade</label>
+                <select id="unidade" class="input-base" required name="unidade">
+                    <option value="" selected disabled>Selecionar sua unidade</option>
+                    <option value="benedito-bentes">Benedito Bentes</option>
+                    <option value="cambona">Cambona</option>
                 </select>
             </div>
     
             <div class="box-input">
-                <label for="input">Selecione sua série</label>
-                <select id="input" class="input-base" required>
-                    <option value="" selected disabled>Selecionar</option>
-                    <option value="teste2">Teste 2</option>
-                    <option value="teste3">Teste 3</option>
+                <label for="serie">Série</label>
+                <select name="serie" id="serie" class="input-base" required>
+                    <option value="" selected disabled>Selecione sua série</option>
+                    <option value="6ano-fundamental">6º Ano</option>
+                    <option value="7ano-fundamental">7º Ano</option>
+                    <option value="8ano-fundamental">8º Ano</option>
+                    <option value="9ano-fundamental">9º Ano</option>
+                    <option value="1ano-medio"> 1º Ano - Médio</option>
+                    <option value="2ano-natureza-medio">2º Ano Natureza - Médio</option>
+                    <option value="2ano-matematica-medio">2º Ano Matemática - Médio</option>
+                    <option value="2ano-habtecnica-medio">2º Ano Hab. técnica - Médio</option>
+                    <option value="3ano-natureza-medio">3º Ano Natureza - Médio</option>
+                    <option value="3ano-matematica-medio">3º Ano Matemática - Médio</option>
+                    <option value="3ano-habtecnica-medio">3º Ano Hab. técnica - Médio</option>
                 </select>
             </div>
     
             <div class="box-input">
-                <label for="input">Seu nome <span class="optional">(opcional)</span> </label>
-                <input type="text" class="input-base">
+                <label for="name">Seu nome <span class="optional">(opcional)</span> </label>
+                <input id="name" type="text" class="input-base" name="nome">
             </div>
     
             <div class="button-area">
@@ -86,7 +95,7 @@
         </footer>
     </section>
 
-
-
 </body>
+
+<script src="assets/scripts/dataLoginController.js"></script>
 </html>
