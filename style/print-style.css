@@ -42,3 +42,7 @@ body.print .aside-buttons {
 body.print .logo-area path{
     fill: #1a1a1a;
 }
+
+body.print .note-table .note-area:nth-child(odd) {
+    background: none ;
+}
