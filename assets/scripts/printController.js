@@ -4,18 +4,25 @@ function printTransform(button) {
     $body.classList.toggle('print')
     if(button.innerText === 'Voltar') {
         button.innerText = 'Finalizar e baixar';
+        button.classList.remove('no-background')
+
+        const $printButton = document.querySelector('.printButton');
+        
+        if($printButton) {
+            $printButton.remove();
+        }
     }
     else {
         button.innerText = 'Voltar';
+        button.classList.add('no-background')
+
+        const buttonPrint = `
+            <button class="button-base printButton" onclick="printScreen()"> Imprimir </button>
+        ` 
+        const $footerButton = document.querySelector('.footer-info');
+        $footerButton.innerHTML += buttonPrint;
         printScreen();
-        setTimeout( () => {
-            console.log('imprimindo')
-            $body.classList.toggle('print')
-        }, '1000')
     }
-
-    button.innerText = 'Finalizar e baixar';
-
 }
 
 function printScreen() {

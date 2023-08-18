@@ -11,6 +11,10 @@
     text-decoration: none;
 }
 
+.button-base.no-background {
+    background: none;
+}
+
 .button-base.full-width {
     width: 100%;
 }

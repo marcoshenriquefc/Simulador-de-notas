@@ -7,7 +7,7 @@ function putUserName() {
         return data.name === 'nome';
     })
 
-    $userName.innerText = `${nameUser.value[0].toUpperCase()}${nameUser.value.substring(1)}`
+    $userName.innerText = !!nameUser.value ? `${nameUser.value[0].toUpperCase()}${nameUser.value.substring(1)}` : ''
 }
 
 putUserName();
