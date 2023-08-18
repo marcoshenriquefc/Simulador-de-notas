@@ -8,9 +8,12 @@ function printTransform(button) {
     else {
         button.innerText = 'Voltar';
         printScreen();
+        setTimeout( () => {
+            console.log('imprimindo')
+            $body.classList.toggle('print')
+        }, '1000')
     }
 
-    $body.classList.toggle('print')
     button.innerText = 'Finalizar e baixar';
 
 }
