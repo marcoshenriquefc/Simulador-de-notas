@@ -21,7 +21,7 @@ body.print .note-table .input-note {
     box-shadow: none;
 }
 body.print .note-table .input-note.active {
-    background-color: #b1b1b1;
+    background-color: #e4e4e4;
     box-shadow: none;
 }
 body.print .note-table .button-note {
