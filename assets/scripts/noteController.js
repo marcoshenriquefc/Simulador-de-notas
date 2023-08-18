@@ -140,155 +140,191 @@ class noteController {
     // Metodo para gerar options do select de matérias
     static getCurrentSerie() {
         const disciplineSerieList =  {
-            '6ano-fundamental' : [
-                'Arte',
-                'Ciências',
-                'Educação Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Projetos de Vida',
-            ],
-            '7ano-fundamental' : [
-                'Arte',
-                'Ciências',
-                'Educação Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Projetos de Vida',
-            ],
-            '8ano-fundamental' : [
-                'Arte',
-                'Ciências',
-                'Educação Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Projetos de Vida',
-            ],
-            '9ano-fundamental' : [
-                'Arte',
-                'Ciências',
-                'Educação Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Projetos de Vida',
-                'Raciocínio Lógico-Matemático',
-                'Redação',
-            ],
-            '1ano-medio' : [
-                'Arte',
-                'Biologia',
-                'Educação Física',
-                'Filosofia',
-                'Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Mundo do Trabalho',
-                'Química',
-                'Sociologia',
-            ],
-            '2ano-natureza-medio' : [
-                'Biologia',
-                'Desvendando o Planeta Terra I',
-                'Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Química',
-                'Seres Microscópicos I',
-                'Seres Microscópicos II',
-            ],
-            '2ano-matematica-medio' : [
-                'Biologia',
-                'Ciência e Tecnologia',
-                'Física',
-                'Geografia',
-                'História',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Matemática',
-                'Matemática e Engenharias I',
-                'Química',
-            ],
-            '2ano-habtecnica-medio' : [
-                'Arq. de Hardware e Software',
-                'Biologia',
-                'Codificação para Front-End',
-                'Física',
-                'Fund. de Bancos de Dados',
-                'Fundamentos de UI/UX',
-                'Geografia',
-                'História',
-                'Int. a Qualidade e Produtividade',
-                'Introdução a TI e Comunicação',
-                'L. E. M. Inglês',
-                'Língua Portuguesa',
-                'Lógica Computacional',
-                'Lógica de Programação',
-                'Matemática',
-                'Metodologias de Desenv. de Projetos',
-                'Projeto Integrador 1',
-                'Química',
-                'Saúde e Segurança no Trabalho',
-                'Versionamento e Colaboração',
-            ],
-            '3ano-natureza-medio' : [
-                'Desvendando o Planeta Terra II',
-                'Física',
-                'Geografia',
-                'História',
-                'Língua Portuguesa',
-                'Matemática',
-                'Química',
-                'Seres Microscópicos III',
-                'Seres Microscópicos IV',
-            ],
-            '3ano-matematica-medio' : [
-                'Investigação e inovação científica',
-                'Finanças e Matemática',
-                'Física',
-                'Geografia',
-                'História',
-                'Língua Portuguesa',
-                'Matemática',
-                'Matemática e Engenharias II',
-                'Pensamento Estatístico',
-                'Química',
-            ],
-            '3ano-habtecnica-medio' : [
-                "Banco de Dados",
-                "Codificação para Back-End",
-                "Desenvolvimento de APIs",
-                "Física",
-                "Geografia",
-                "História",
-                "Interação com APIs",
-                "Língua Portuguesa",
-                "Matemática",
-                "Projeto de Back-End",
-                "Projeto de Front-End",
-                "Química",
-                "Testes de Back-End",
-                "Testes de Front-End",
-            ],
-
-
+            '6ano-fundamental' : {
+                materiaBase: [
+                    'Arte',
+                    'Ciências',
+                    'Educação Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Projetos de Vida'
+                ],
+                materiaEspecial: []
+            },
+            '7ano-fundamental' :{
+                materiaBase: [
+                    'Arte',
+                    'Ciências',
+                    'Educação Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Projetos de Vida'
+                ],
+                materiaEspecial: []
+            },
+            '8ano-fundamental' :{
+                materiaBase: [
+                    'Arte',
+                    'Ciências',
+                    'Educação Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Projetos de Vida'
+                ],
+                materiaEspecial: []
+            },
+            '9ano-fundamental' : {
+                materiaBase: [
+                    'Arte',
+                    'Ciências',
+                    'Educação Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Projetos de Vida',
+                    'Raciocínio Lógico-Matemático',
+                    'Redação'
+                ],
+                materiaEspecial: []
+            },
+            '1ano-medio' :{
+                materiaBase: [
+                    'Arte',
+                    'Biologia',
+                    'Educação Física',
+                    'Filosofia',
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química',
+                    'Sociologia'
+                ],
+                materiaEspecial: ['Mundo do Trabalho']
+            },
+            '2ano-natureza-medio' : {
+                materiaBase: [
+                    'Biologia',
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química'
+                ],
+                materiaEspecial: [
+                    'Desvendando o Planeta Terra I',
+                    'Seres Microscópicos I',
+                    'Seres Microscópicos II'
+                ]
+            },
+            '2ano-matematica-medio' : {
+                materiaBase: [
+                    'Biologia',
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química'
+                ],
+                materiaEspecial: [
+                    'Ciência e Tecnologia',
+                    'Matemática e Engenharias I'
+                ]
+            },
+            '2ano-habtecnica-medio' : {
+                materiaBase: [
+                    'Biologia',
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'L. E. M. Inglês',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química'
+                ],
+                materiaEspecial: [
+                    'Arq. de Hardware e Software',
+                    'Codificação para Front-End',
+                    'Fund. de Bancos de Dados',
+                    'Fundamentos de UI/UX',
+                    'Int. a Qualidade e Produtividade',
+                    'Introdução a TI e Comunicação',
+                    'Lógica Computacional',
+                    'Lógica de Programação',
+                    'Metodologias de Desenv. de Projetos',
+                    'Projeto Integrador 1',
+                    'Saúde e Segurança no Trabalho',
+                    'Versionamento e Colaboração'
+                ]
+            },
+            '3ano-natureza-medio' : {
+                materiaBase: [
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química'
+                ],
+                materiaEspecial: [
+                    'Desvendando o Planeta Terra II',
+                    'Seres Microscópicos III',
+                    'Seres Microscópicos IV'
+                ]
+            },
+            '3ano-matematica-medio' : {
+                materiaBase: [
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química'
+                ],
+                materiaEspecial: [
+                    'Investigação e Inovação Científica',
+                    'Finanças e Matemática',
+                    'Matemática e Engenharias II',
+                    'Pensamento Estatístico'
+                ]
+            },
+            '3ano-habtecnica-medio' : {
+                materiaBase: [
+                    'Física',
+                    'Geografia',
+                    'História',
+                    'Língua Portuguesa',
+                    'Matemática',
+                    'Química'
+                ],
+                materiaEspecial: [
+                    'Banco de Dados',
+                    'Codificação para Back-End',
+                    'Desenvolvimento de API\'s',
+                    'Interação com APIs',
+                    'Projeto de Back-End',
+                    'Projeto de Front-End',
+                    'Testes de Back-End',
+                    'Testes de Front-End'
+                ]
+            }
         };
 
         const userData = JSON.parse(CookieDataUser.getCookie(CookieDataUser.cookieName))
@@ -299,7 +335,7 @@ class noteController {
         }
 
         const serie = userData.find( userSerie => {
-            return userSerie.name === 'serie'
+            return userSerie.name === 'serie';
         })
 
         const currentSerie =  disciplineSerieList[serie.value];
@@ -309,8 +345,18 @@ class noteController {
     }
 
     static createOptionsInputs(listOptions) {
+        console.log(listOptions);
+        console.log($noteForm.id);
+
+        let listMaterias = []
+        if($noteForm.id === 'situation3') {
+            listMaterias = listOptions.materiaEspecial;
+        }
+        else {
+            listMaterias = listOptions.materiaBase;
+        }
         
-        const optionListHTML = listOptions.map( option => {
+        const optionListHTML = listMaterias.map( option => {
             const tratedName = option.normalize('NFD')
                             .replace(/[\u0300-\u036f]/g, "")
                             .toLowerCase()
