@@ -344,10 +344,8 @@ class noteController {
         this.addOptionsHTML(optionsHTML);
     }
 
+    // Create options input HTML
     static createOptionsInputs(listOptions) {
-        console.log(listOptions);
-        console.log($noteForm.id);
-
         let listMaterias = []
         if($noteForm.id === 'situation3') {
             listMaterias = listOptions.materiaEspecial;

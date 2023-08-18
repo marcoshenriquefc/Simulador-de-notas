@@ -9,19 +9,18 @@ if($loginForm) {
 }
 
 class dataLoginController {
-    
     static getDataSelected() {
         const $inputsLists = Array.from($loginForm.querySelectorAll('.input-base')) 
 
         const dataLogin = $inputsLists.map(input => {
             const dataInput = {
                 name: input.name,
-                value: input.value
+                value: input.value,
             };
             return dataInput;
         });
 
-        if(dataLogin[0].value && dataLogin[1].value) {
+        if(dataLogin[1].value) {
             const dataLoginJSON = JSON.stringify(dataLogin);
             CookieDataUser.setCookie(CookieDataUser.cookieName, dataLoginJSON);
 
